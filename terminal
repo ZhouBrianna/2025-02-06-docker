@@ -1,0 +1,363 @@
+For more details, please visit https://support.apple.com/kb/HT208050.
+(base) dhcp-206-12-165-157:~ briannazhou$ cd Downloads/dsci310
+(base) dhcp-206-12-165-157:dsci310 briannazhou$ cd 2025-02-06-docker
+(base) dhcp-206-12-165-157:2025-02-06-docker briannazhou$ docker run \
+>     --rm \
+>     -it \
+>     -e PASSWORD="password" \
+>     -p 8787:8787 \
+>     -v /$(pwd):/home/rstudio/pizza \
+>     rocker/rstudio:4.4.2
+[s6-init] making user provided files available at /var/run/s6/etc...exited 0.
+[s6-init] ensuring user provided files have correct perms...exited 0.
+[fix-attrs.d] applying ownership & permissions fixes...
+[fix-attrs.d] done.
+[cont-init.d] executing container initialization scripts...
+[cont-init.d] 01_set_env: executing... 
+skipping /var/run/s6/container_environment/HOME
+skipping /var/run/s6/container_environment/PASSWORD
+skipping /var/run/s6/container_environment/RSTUDIO_VERSION
+[cont-init.d] 01_set_env: exited 0.
+[cont-init.d] 02_userconf: executing... 
+[cont-init.d] 02_userconf: exited 0.
+[cont-init.d] done.
+[services.d] starting services
+[services.d] done.
+TTY detected. Printing informational message about logging configuration. Logging configuration loaded from '/etc/rstudio/logging.conf'. Logging to 'syslog'.
+TTY detected. Printing informational message about logging configuration. Logging configuration loaded from '/etc/rstudio/logging.conf'. Logging to 'syslog'.
+^C[cont-finish.d] executing container finish scripts...
+[cont-finish.d] done.
+[s6-finish] waiting for services.
+s6-svwait: fatal: timed out
+[s6-finish] sending all processes the TERM signal.
+TTY detected. Printing informational message about logging configuration. Logging configuration loaded from '/etc/rstudio/logging.conf'. Logging to 'syslog'.
+[s6-finish] sending all processes the KILL signal and exiting.
+(base) dhcp-206-12-165-157:2025-02-06-docker briannazhou$ ls
+LICENSE			README.md		docker-compose.yml
+(base) dhcp-206-12-165-157:2025-02-06-docker briannazhou$ pwd
+/Users/briannazhou/Downloads/dsci310/2025-02-06-docker
+(base) dhcp-206-12-165-157:2025-02-06-docker briannazhou$ docker-compose up
+[+] Running 2/2
+ ✔ Network 2025-02-06-docker_default           Created                     0.0s 
+ ✔ Container 2025-02-06-docker-analysis-env-1  Created                     0.1s 
+Attaching to analysis-env-1
+analysis-env-1  | [s6-init] making user provided files available at /var/run/s6/etc...exited 0.
+analysis-env-1  | [s6-init] ensuring user provided files have correct perms...exited 0.
+analysis-env-1  | [fix-attrs.d] applying ownership & permissions fixes...
+analysis-env-1  | [fix-attrs.d] done.
+analysis-env-1  | [cont-init.d] executing container initialization scripts...
+analysis-env-1  | [cont-init.d] 01_set_env: executing... 
+analysis-env-1  | skipping /var/run/s6/container_environment/HOME
+analysis-env-1  | skipping /var/run/s6/container_environment/PASSWORD
+analysis-env-1  | skipping /var/run/s6/container_environment/RSTUDIO_VERSION
+analysis-env-1  | [cont-init.d] 01_set_env: exited 0.
+analysis-env-1  | [cont-init.d] 02_userconf: executing... 
+analysis-env-1  | [cont-init.d] 02_userconf: exited 0.
+analysis-env-1  | [cont-init.d] done.
+analysis-env-1  | [services.d] starting services
+analysis-env-1  | [services.d] done.
+Gracefully stopping... (press Ctrl+C again to force)
+[+] Stopping 1/1
+ ✔ Container 2025-02-06-docker-analysis-env-1  Stopped                     6.6s 
+(base) dhcp-206-12-165-157:2025-02-06-docker briannazhou$ docker-compose rm
+? Going to remove 2025-02-06-docker-analysis-env-1 Yes
+[+] Removing 1/0
+ ✔ Container 2025-02-06-docker-analysis-env-1  Removed                     0.0s 
+(base) dhcp-206-12-165-157:2025-02-06-docker briannazhou$ docker-compose up
+[+] Running 1/1
+ ✔ Container 2025-02-06-docker-analysis-env-1  Created                     0.1s 
+Attaching to analysis-env-1
+analysis-env-1  | [s6-init] making user provided files available at /var/run/s6/etc...exited 0.
+analysis-env-1  | [s6-init] ensuring user provided files have correct perms...exited 0.
+analysis-env-1  | [fix-attrs.d] applying ownership & permissions fixes...
+analysis-env-1  | [fix-attrs.d] done.
+analysis-env-1  | [cont-init.d] executing container initialization scripts...
+analysis-env-1  | [cont-init.d] 01_set_env: executing... 
+analysis-env-1  | skipping /var/run/s6/container_environment/HOME
+analysis-env-1  | skipping /var/run/s6/container_environment/PASSWORD
+analysis-env-1  | skipping /var/run/s6/container_environment/RSTUDIO_VERSION
+analysis-env-1  | [cont-init.d] 01_set_env: exited 0.
+analysis-env-1  | [cont-init.d] 02_userconf: executing... 
+analysis-env-1  | [cont-init.d] 02_userconf: exited 0.
+analysis-env-1  | [cont-init.d] done.
+analysis-env-1  | [services.d] starting services
+analysis-env-1  | [services.d] done.
+Gracefully stopping... (press Ctrl+C again to force)
+[+] Stopping 1/1
+ ✔ Container 2025-02-06-docker-analysis-env-1  Stopped                     6.7s 
+(base) dhcp-206-12-165-157:2025-02-06-docker briannazhou$ docker-compose rm
+yaml: unmarshal errors:
+  line 12: mapping key "services" already defined at line 1
+(base) dhcp-206-12-165-157:2025-02-06-docker briannazhou$ docker-compose rm
+yaml: unmarshal errors:
+  line 12: mapping key "services" already defined at line 1
+(base) dhcp-206-12-165-157:2025-02-06-docker briannazhou$  docker-compose rm
+? Going to remove 2025-02-06-docker-analysis-env-1 Yes
+[+] Removing 1/0
+ ✔ Container 2025-02-06-docker-analysis-env-1  Removed                     0.0s 
+(base) dhcp-206-12-165-157:2025-02-06-docker briannazhou$ ls
+Dockerfile		README.md
+(base) dhcp-206-12-165-157:2025-02-06-docker briannazhou$ docker build --tag my container .
+ERROR: "docker buildx build" requires exactly 1 argument.
+See 'docker buildx build --help'.
+
+Usage:  docker buildx build [OPTIONS] PATH | URL | -
+
+Start a build
+(base) dhcp-206-12-165-157:2025-02-06-docker briannazhou$ docker build --tag my container .
+ERROR: "docker buildx build" requires exactly 1 argument.
+See 'docker buildx build --help'.
+
+Usage:  docker buildx build [OPTIONS] PATH | URL | -
+
+Start a build
+(base) dhcp-206-12-165-157:2025-02-06-docker briannazhou$ docker build --tag mycontainer . 
+[+] Building 1.5s (6/6) FINISHED                                                docker:desktop-linux
+ => [internal] load build definition from Dockerfile                                            0.0s
+ => => transferring dockerfile: 101B                                                            0.0s
+ => [internal] load metadata for docker.io/rocker/rstudio:4.4.2                                 0.0s
+ => [internal] load .dockerignore                                                               0.0s
+ => => transferring context: 2B                                                                 0.0s
+ => [1/1] FROM docker.io/rocker/rstudio:4.4.2@sha256:050e232046d8a8681d84444498a48afadfa7900fa  1.2s
+ => => resolve docker.io/rocker/rstudio:4.4.2@sha256:050e232046d8a8681d84444498a48afadfa7900fa  1.1s
+ => [auth] rocker/rstudio:pull token for registry-1.docker.io                                   0.0s
+ => exporting to image                                                                          0.1s
+ => => exporting layers                                                                         0.0s
+ => => exporting manifest sha256:5da25d3198cf2c5a6b1c5e6dd7c3c9602fd36b3e514c7f323a208464ef67f  0.0s
+ => => exporting config sha256:41007ccdc96bd546b044adee004b03ce296a90d1f26c6afec242f598b314a8a  0.0s
+ => => exporting attestation manifest sha256:35d4976e951bd0215837fbfd3a3a67bd7f90b0e352be6cd57  0.0s
+ => => exporting manifest list sha256:4a2f6beb257b99faad8daba888b8fc7f98a82003a4faa79428a8f4c2  0.0s
+ => => naming to docker.io/library/mycontainer:latest                                           0.0s
+ => => unpacking to docker.io/library/mycontainer:latest                                        0.0s
+
+View build details: docker-desktop://dashboard/build/desktop-linux/desktop-linux/76dag8qmf8a71rw0anyn4cnv8
+(base) dhcp-206-12-165-157:2025-02-06-docker briannazhou$ docker-compose up
+[+] Running 2/2
+ ✔ Container 2025-02-06-docker-analysis-env-1   Created                                         0.1s 
+ ✔ Container 2025-02-06-docker-analysis-env2-1  Created                                         0.1s 
+Attaching to analysis-env-1, analysis-env2-1
+analysis-env-1   | [s6-init] making user provided files available at /var/run/s6/etc...exited 0.
+analysis-env2-1  | [s6-init] making user provided files available at /var/run/s6/etc...exited 0.
+analysis-env-1   | [s6-init] ensuring user provided files have correct perms...exited 0.
+analysis-env-1   | [fix-attrs.d] applying ownership & permissions fixes...
+analysis-env2-1  | [s6-init] ensuring user provided files have correct perms...exited 0.
+analysis-env-1   | [fix-attrs.d] done.
+analysis-env2-1  | [fix-attrs.d] applying ownership & permissions fixes...
+analysis-env-1   | [cont-init.d] executing container initialization scripts...
+analysis-env2-1  | [fix-attrs.d] done.
+analysis-env2-1  | [cont-init.d] executing container initialization scripts...
+analysis-env-1   | [cont-init.d] 01_set_env: executing... 
+analysis-env2-1  | [cont-init.d] 01_set_env: executing... 
+analysis-env-1   | skipping /var/run/s6/container_environment/HOME
+analysis-env2-1  | skipping /var/run/s6/container_environment/HOME
+analysis-env2-1  | skipping /var/run/s6/container_environment/PASSWORD
+analysis-env-1   | skipping /var/run/s6/container_environment/PASSWORD
+analysis-env2-1  | skipping /var/run/s6/container_environment/RSTUDIO_VERSION
+analysis-env-1   | skipping /var/run/s6/container_environment/RSTUDIO_VERSION
+analysis-env2-1  | [cont-init.d] 01_set_env: exited 0.
+analysis-env-1   | [cont-init.d] 01_set_env: exited 0.
+analysis-env-1   | [cont-init.d] 02_userconf: executing... 
+analysis-env2-1  | [cont-init.d] 02_userconf: executing... 
+analysis-env2-1  | Skipping authentication as requested
+analysis-env-1   | Skipping authentication as requested
+analysis-env2-1  | [cont-init.d] 02_userconf: exited 0.
+analysis-env-1   | [cont-init.d] 02_userconf: exited 0.
+analysis-env2-1  | [cont-init.d] done.
+analysis-env-1   | [cont-init.d] done.
+analysis-env2-1  | [services.d] starting services
+analysis-env-1   | [services.d] starting services
+analysis-env-1   | [services.d] done.
+analysis-env2-1  | [services.d] done.
+Gracefully stopping... (press Ctrl+C again to force)
+[+] Stopping 2/2
+ ✔ Container 2025-02-06-docker-analysis-env2-1  Stopped                                         6.6s 
+ ✔ Container 2025-02-06-docker-analysis-env-1   Stopped                                         3.6s 
+(base) dhcp-206-12-165-157:2025-02-06-docker briannazhou$ docker-compose rm
+? Going to remove 2025-02-06-docker-analysis-env2-1, 2025-02-06-docker-analysis-env-1 Yes
+[+] Removing 2/0
+ ✔ Container 2025-02-06-docker-analysis-env-1   Removed                                         0.0s 
+ ✔ Container 2025-02-06-docker-analysis-env2-1  Removed                                         0.0s 
+(base) dhcp-206-12-165-157:2025-02-06-docker briannazhou$ Rscript -e "print("hello")"
+Error: object 'hello' not found
+Execution halted
+(base) dhcp-206-12-165-157:2025-02-06-docker briannazhou$  Rscript -e "print('hello')"
+[1] "hello"
+(base) dhcp-206-12-165-157:2025-02-06-docker briannazhou$ docker build --tag mycontainer .
+[+] Building 10.2s (6/6) FINISHED                                               docker:desktop-linux
+ => [internal] load build definition from Dockerfile                                            0.0s
+ => => transferring dockerfile: 191B                                                            0.0s
+ => [internal] load metadata for docker.io/rocker/rstudio:4.4.2                                 0.0s
+ => [internal] load .dockerignore                                                               0.0s
+ => => transferring context: 2B                                                                 0.0s
+ => CACHED [1/2] FROM docker.io/rocker/rstudio:4.4.2@sha256:050e232046d8a8681d84444498a48afadf  0.0s
+ => => resolve docker.io/rocker/rstudio:4.4.2@sha256:050e232046d8a8681d84444498a48afadfa7900fa  0.0s
+ => [2/2] RUN Rscript -e "install.packages('renv', repos = c(CRAN = 'https://cloud.r-project.o  9.8s
+ => exporting to image                                                                          0.2s
+ => => exporting layers                                                                         0.1s
+ => => exporting manifest sha256:f9fed8bcf2a94c6057729383a8849f667cb327d9708bed4ebb8eaa4f5ba4c  0.0s 
+ => => exporting config sha256:3471e9b4433dd6d257ffe454ce40b950210bcfaeb1c8c266f5c47a30788f2cc  0.0s 
+ => => exporting attestation manifest sha256:8714c9e129728fb11d9e610fa85bf2ac0969cbd7a6b4a3cf5  0.0s 
+ => => exporting manifest list sha256:ad03efc748b7ef8e282a442f4da024f8863a2f2defc10c52922dc0b3  0.0s 
+ => => naming to docker.io/library/mycontainer:latest                                           0.0s
+ => => unpacking to docker.io/library/mycontainer:latest                                        0.0s
+
+View build details: docker-desktop://dashboard/build/desktop-linux/desktop-linux/mgt0yhon4gfvqif6d6y2advjq
+(base) dhcp-206-12-165-157:2025-02-06-docker briannazhou$ docker-compose up
+[+] Running 2/2
+ ✔ Container 2025-02-06-docker-analysis-env-1   Created                                         0.1s 
+ ✔ Container 2025-02-06-docker-analysis-env2-1  Created                                         0.1s 
+Attaching to analysis-env-1, analysis-env2-1
+analysis-env2-1  | [s6-init] making user provided files available at /var/run/s6/etc...exited 0.
+analysis-env-1   | [s6-init] making user provided files available at /var/run/s6/etc...exited 0.
+analysis-env2-1  | [s6-init] ensuring user provided files have correct perms...exited 0.
+analysis-env2-1  | [fix-attrs.d] applying ownership & permissions fixes...
+analysis-env-1   | [s6-init] ensuring user provided files have correct perms...exited 0.
+analysis-env2-1  | [fix-attrs.d] done.
+analysis-env-1   | [fix-attrs.d] applying ownership & permissions fixes...
+analysis-env2-1  | [cont-init.d] executing container initialization scripts...
+analysis-env2-1  | [cont-init.d] 01_set_env: executing... 
+analysis-env-1   | [fix-attrs.d] done.
+analysis-env-1   | [cont-init.d] executing container initialization scripts...
+analysis-env-1   | [cont-init.d] 01_set_env: executing... 
+analysis-env2-1  | skipping /var/run/s6/container_environment/HOME
+analysis-env-1   | skipping /var/run/s6/container_environment/HOME
+analysis-env2-1  | skipping /var/run/s6/container_environment/PASSWORD
+analysis-env-1   | skipping /var/run/s6/container_environment/PASSWORD
+analysis-env2-1  | skipping /var/run/s6/container_environment/RSTUDIO_VERSION
+analysis-env-1   | skipping /var/run/s6/container_environment/RSTUDIO_VERSION
+analysis-env-1   | [cont-init.d] 01_set_env: exited 0.
+analysis-env2-1  | [cont-init.d] 01_set_env: exited 0.
+analysis-env-1   | [cont-init.d] 02_userconf: executing... 
+analysis-env2-1  | [cont-init.d] 02_userconf: executing... 
+analysis-env2-1  | Skipping authentication as requested
+analysis-env-1   | Skipping authentication as requested
+analysis-env-1   | [cont-init.d] 02_userconf: exited 0.
+analysis-env2-1  | [cont-init.d] 02_userconf: exited 0.
+analysis-env-1   | [cont-init.d] done.
+analysis-env2-1  | [cont-init.d] done.
+analysis-env-1   | [services.d] starting services
+analysis-env2-1  | [services.d] starting services
+analysis-env2-1  | [services.d] done.
+analysis-env-1   | [services.d] done.
+Gracefully stopping... (press Ctrl+C again to force)
+[+] Stopping 2/2
+ ✔ Container 2025-02-06-docker-analysis-env2-1  Stopped                                         6.7s 
+ ✔ Container 2025-02-06-docker-analysis-env-1   Stopped                                         3.6s 
+(base) dhcp-206-12-165-157:2025-02-06-docker briannazhou$ docker-compose rm
+? Going to remove 2025-02-06-docker-analysis-env2-1, 2025-02-06-docker-analysis-env-1 Yes
+[+] Removing 2/0
+ ✔ Container 2025-02-06-docker-analysis-env-1   Removed                                         0.0s 
+(base) dhcp-206-12-165-157:2025-02-06-docker briannazhou$ docker build --tag briannazhou/mycontainer .
+[+] Building 235.1s (8/8) FINISHED                                                                                   docker:desktop-linux
+ => [internal] load build definition from Dockerfile                                                                                 0.0s
+ => => transferring dockerfile: 327B                                                                                                 0.0s
+ => [internal] load metadata for docker.io/rocker/rstudio:4.4.2                                                                      0.0s
+ => [internal] load .dockerignore                                                                                                    0.0s
+ => => transferring context: 2B                                                                                                      0.0s
+ => [1/3] FROM docker.io/rocker/rstudio:4.4.2@sha256:050e232046d8a8681d84444498a48afadfa7900fa783be5ec3ed9f4eb9f3ceb0                1.0s
+ => => resolve docker.io/rocker/rstudio:4.4.2@sha256:050e232046d8a8681d84444498a48afadfa7900fa783be5ec3ed9f4eb9f3ceb0                1.0s
+ => [auth] rocker/rstudio:pull token for registry-1.docker.io                                                                        0.0s
+ => CACHED [2/3] RUN Rscript -e "install.packages('renv', repos = c(CRAN = 'https://cloud.r-project.org'))"                          0.0s
+ => [3/3] RUN Rscript -e "install.packages('remote', repos = c(CRAN = 'https://cloud.r-project.org'))"                             227.2s
+ => exporting to image                                                                                                               6.7s 
+ => => exporting layers                                                                                                              5.6s 
+ => => exporting manifest sha256:9dadbc2ef2b73fd3dc97664674989337fd9954e0fd8007754671095b1b7d4a08                                    0.0s 
+ => => exporting config sha256:0d644cc74b3a7939274e6b3303340b8a1cc976bc4677fcbf54cac82eef6698a4                                      0.0s 
+ => => exporting attestation manifest sha256:594448b21ca05487df36012887b93cfaec90462aa04f596bbb11e7770066f369                        0.0s 
+ => => exporting manifest list sha256:8a36b9f6473c3710cd83fe142cf45e6abc92a5b11e7512e729076397a1b4ccda                               0.0s 
+ => => naming to docker.io/briannazhou/mycontainer:latest                                                                            0.0s
+ => => unpacking to docker.io/briannazhou/mycontainer:latest                                                                         1.0s
+
+View build details: docker-desktop://dashboard/build/desktop-linux/desktop-linux/62j611k939crts4jg4swz5ick
+(base) dhcp-206-12-165-157:2025-02-06-docker briannazhou$ docker push briannazhou/mycontainer
+Using default tag: latest
+The push refers to repository [docker.io/briannazhou/mycontainer]
+c6ce8e3f887b: Mounted from rocker/rstudio 
+9cb14ffc3286: Mounted from rocker/rstudio 
+56cf77c7a8bb: Pushed 
+a419973a2a09: Mounted from rocker/rstudio 
+6b0dc0c4f77b: Mounted from rocker/rstudio 
+d0e8f63a1bd7: Layer already exists 
+997bbbdb40cb: Mounted from rocker/rstudio 
+8bb55f067777: Mounted from rocker/rstudio 
+acf3980b893b: Mounted from rocker/rstudio 
+da59b6f9bab7: Mounted from rocker/rstudio 
+c73220dc73f3: Mounted from rocker/rstudio 
+6d3965be6656: Mounted from rocker/rstudio 
+5ad9ab451366: Mounted from rocker/rstudio 
+f191c9f4d114: Pushed 
+f1e17bfc7086: Mounted from rocker/rstudio 
+c3a172362997: Pushed 
+ab72094d9357: Layer already exists 
+5f384c904b92: Mounted from rocker/rstudio 
+d7b0192bb93f: Mounted from rocker/rstudio 
+afd6640b140b: Mounted from rocker/rstudio 
+1345fadce7b9: Mounted from rocker/rstudio 
+latest: digest: sha256:8a36b9f6473c3710cd83fe142cf45e6abc92a5b11e7512e729076397a1b4ccda size: 856
+(base) dhcp-206-12-165-157:2025-02-06-docker briannazhou$ git add .
+(base) dhcp-206-12-165-157:2025-02-06-docker briannazhou$ git commit -m "finish demo"
+[main 4342510] finish demo
+ 3 files changed, 37 insertions(+), 1 deletion(-)
+ create mode 100644 Dockerfile
+ create mode 100644 docker-compose.yml
+(base) dhcp-206-12-165-157:2025-02-06-docker briannazhou$ git push origin main
+Enumerating objects: 7, done.
+Counting objects: 100% (7/7), done.
+Delta compression using up to 8 threads
+Compressing objects: 100% (5/5), done.
+Writing objects: 100% (5/5), 850 bytes | 850.00 KiB/s, done.
+Total 5 (delta 0), reused 0 (delta 0), pack-reused 0
+To https://github.com/ZhouBrianna/2025-02-06-docker.git
+   e5fea34..4342510  main -> main
+(base) dhcp-206-12-165-157:2025-02-06-docker briannazhou$ git status
+On branch main
+Your branch is up to date with 'origin/main'.
+
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+	.github/
+
+nothing added to commit but untracked files present (use "git add" to track)
+(base) dhcp-206-12-165-157:2025-02-06-docker briannazhou$ git add .
+(base) dhcp-206-12-165-157:2025-02-06-docker briannazhou$ git commit -m "github action"
+[main ca624b0] github action
+ 1 file changed, 45 insertions(+)
+ create mode 100644 .github/workflows/docker..yml
+(base) dhcp-206-12-165-157:2025-02-06-docker briannazhou$ git push origin main
+Enumerating objects: 6, done.
+Counting objects: 100% (6/6), done.
+Delta compression using up to 8 threads
+Compressing objects: 100% (3/3), done.
+Writing objects: 100% (5/5), 965 bytes | 965.00 KiB/s, done.
+Total 5 (delta 1), reused 0 (delta 0), pack-reused 0
+remote: Resolving deltas: 100% (1/1), completed with 1 local object.
+To https://github.com/ZhouBrianna/2025-02-06-docker.git
+   4342510..ca624b0  main -> main
+(base) dhcp-206-12-165-157:2025-02-06-docker briannazhou$ git add .
+(base) dhcp-206-12-165-157:2025-02-06-docker briannazhou$ git commit -m "edit metadata"
+[main acdd66b] edit metadata
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+(base) dhcp-206-12-165-157:2025-02-06-docker briannazhou$ git push origin main
+Enumerating objects: 9, done.
+Counting objects: 100% (9/9), done.
+Delta compression using up to 8 threads
+Compressing objects: 100% (3/3), done.
+Writing objects: 100% (5/5), 423 bytes | 423.00 KiB/s, done.
+Total 5 (delta 2), reused 0 (delta 0), pack-reused 0
+remote: Resolving deltas: 100% (2/2), completed with 2 local objects.
+To https://github.com/ZhouBrianna/2025-02-06-docker.git
+   ca624b0..acdd66b  main -> main
+(base) dhcp-206-12-165-157:2025-02-06-docker briannazhou$ git add .
+(base) dhcp-206-12-165-157:2025-02-06-docker briannazhou$ git commit -m "modify dockerfile"
+[main 4acf8b1] modify dockerfile
+ 1 file changed, 2 insertions(+)
+(base) dhcp-206-12-165-157:2025-02-06-docker briannazhou$ git push origin main
+Enumerating objects: 5, done.
+Counting objects: 100% (5/5), done.
+Delta compression using up to 8 threads
+Compressing objects: 100% (3/3), done.
+Writing objects: 100% (3/3), 323 bytes | 323.00 KiB/s, done.
+Total 3 (delta 2), reused 0 (delta 0), pack-reused 0
+remote: Resolving deltas: 100% (2/2), completed with 2 local objects.
+To https://github.com/ZhouBrianna/2025-02-06-docker.git
+   acdd66b..4acf8b1  main -> main
