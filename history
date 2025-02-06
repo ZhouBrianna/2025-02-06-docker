@@ -1,0 +1,42 @@
+501  cd Downloads/dsci310
+  502  cd 2025-02-06-docker
+  503  docker run     --rm     -it     -e PASSWORD="password"     -p 8787:8787     -v /$(pwd):/home/rstudio/pizza     rocker/rstudio:4.4.2
+  504  ls
+  505  pwd
+  506  docker-compose up
+  507  docker-compose rm
+  508  docker-compose up
+  509  docker-compose rm
+  510  docker-compose rm
+  511   docker-compose rm
+  512  ls
+  513  docker build --tag my container .
+  514  docker build --tag my container .
+  515  docker build --tag mycontainer . 
+  516  docker-compose up
+  517  docker-compose rm
+  518  Rscript -e "print("hello")"
+  519   Rscript -e "print('hello')"
+  520  docker build --tag mycontainer .
+  521  docker-compose up
+  522  docker-compose rm
+  523  docker build --tag briannazhou/mycontainer .
+  524  docker push briannazhou/mycontainer
+  525  git add .
+  526  git commit -m "finish demo"
+  527  git push origin main
+  528  git status
+  529  git add .
+  530  git commit -m "github action"
+  531  git push origin main
+  541  git add .
+  542  git commit -m "edit metadata"
+  543  git push origin main
+  544  git status
+  545  pwd
+  546  git status
+  547  docker images
+  548  docker push briannazhou/mycontainer
+  549  git add .
+  550  git commit -m "modify dockerfile"
+  551  git push origin main
